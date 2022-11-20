@@ -683,6 +683,7 @@ pre {
   background: #333;
   box-shadow: 0 0 20px rgba(66, 50, 98, 0.35);
   border-radius: 10px;
+  opacity: 0.2;
 }
 label {
   background-color: indigo;
