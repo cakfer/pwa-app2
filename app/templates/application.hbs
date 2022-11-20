@@ -1,5 +1,52 @@
 {{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
+{{!-- <WelcomePage /> --}}
+<h1>TWIBBON.TK</h1>
+<p>Ini adalah situs web tempat Anda dapat menambahkan foto ke bingkai.</p>
+
+<h2>Tutorial</h2>
+
+<p>Silahkan unggah gambar dan bingkai lalu klik pratinjau kemudian unduh, aplikasi ini akan otomatis menggabungkan unggahan gambar dan bingkai yang Anda pilih.</p>
+
+<p>
+<input type="file" id="file-upload-1" accept="image/*" onchange="loadFile(event)" hidden multiple/>
+<label for="file-upload-1">Unggah Gambar</label>
+
+<input type="file" id="file-upload-2" accept="image/*" onchange="loadTemplate(event)" hidden multiple/>
+<label for="file-upload-2">Unggah Bingkai</label>
+
+<p id="filename-1"></p>
+<p><img id="img1" src="/no-image.jpg" style="display: none"/></p>
+
+<p id="filename-2"></p>
+<p><img id="gambartemplate" src="/no-image.jpg" style="display: none"/></p>
+</p>
+
+<div style="display: none" id="grabMe">
+<canvas id="canvas"></canvas>
+<button class="button big danger" id="cancel" onclick="location.reload()">Hapus</button>
+<button class="button big" onclick="download()" id="btndownload">Unduh</button>
+</div>
+
+<p>
+<button id="myModal" class="button big" onclick="gen()">Pratinjau</button>
+</p>
+
+<h2>Twibbon Generator</h2>
+  
+<p>Tambahkan tampilan yang disesuaikan ke profil Facebook hanya dalam beberapa langkah.</p>
+
+<p>Buat bingkai di sini untuk teman dan pengikut Anda menggunakan bingkai dari <a href="/">bingkai kami</a>.</p>
+
+<p><a class="reference" target="_blank" rel="noopener" href="https://www.facebook.com/bungferry.wa">🔗 Ferry Ayunda</a></p>
+
+<script src="/twibbon.js"></script>
+<script>
+new jBox('Modal', {
+  attach: '#myModal',
+  title: 'Twibbon v.2',
+  content: $('#grabMe')
+});
+</script>
 {{!-- Feel free to remove this! --}}
 
 {{outlet}}
